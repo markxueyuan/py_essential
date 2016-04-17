@@ -51,7 +51,7 @@ class Stack(list):  # Stack inherit from list
     # since Stack inherit from list, it can use any methods of list
         # to build its own method
 
-    @staticmethod  # declare as static method
+    @staticmethod  # declare as static method, this known as a decorator
     def privateStack():
         # This static method returns a stack containing an element "Treasure"
         s = Stack()
