@@ -30,7 +30,7 @@ prices = {}
 prices = dict()
 
 prices = {
-    "GOOG": 490.10,
+    "GOOG": 490.10,   # the key should be of hashable type: string in this case
     "AAAPL": 123.50,
     "IBM": 91.50,
     "MSFT": 52.13
