@@ -153,7 +153,73 @@ print(a)
 del a['5']
 print(a)
 print(1 in a)
-b = a.copy()
+b = a.copy()  # seems a shallow copy
+a.clear()
+print(b)
+print(a)
+print(dict.fromkeys(['a', 'b', 'c'], 3))
+print(a.fromkeys(['c', 'd'], 4))  # although static method
+print(b.get((3, 4), "when not found"))
+print(b.get((4, 5), "when not found"))
+print(b.items()) # returns an iterator
+print(b.keys())
+print(b.pop('2'))
+print(b.popitem())  # removes a random (k, v) and returns it as a tuple
+print(b.setdefault((5, 6), 777))
+m = {
+    "hehe": 1,
+    'lala': 2,
+    3: 3
+}
+print(b.update(m))
+print(b.values())
+
+################# sets
+
+# the item placed into sets must be immutable
+
+s = set([1, 2, 3])  # mutable set
+print(s)
+x = frozenset(['a', 37, 'hello'])
+print(x)
+print(len(s))
+t = s.copy()
+u = set([2, 3, 4])
+print(s.difference(u))  # returns all item in s, but not in u
+print(s.intersection(u))
+print(s.isdisjoint(u))
+print(s.issubset(u))
+print(s.issuperset(u))
+print(s.symmetric_difference(u))
+print(s.union(t))
+s.add(8)
+print(s)
+s.difference_update(u)
+print(s)
+s.discard(8)
+try:
+    s.remove(9)
+except KeyError as e:
+    print(e)
+print(s)
+for i in range(8): s.add(i)
+print(s)
+s.pop()
+print(s)
+y = set()
+for i in range(4, 16): y.add(i)
+print(y)
+s.symmetric_difference_update(y) # update s to the symmetric difference between s and y
+print(s)
+w = [i for i in range(16, 22)]
+s.update(w)  # add items w to s
+print(s)
+
+
+
+
+
+
 
 
 
