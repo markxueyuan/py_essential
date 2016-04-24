@@ -13,10 +13,14 @@ path = r'C:\newdata\tests'  # raw strings
 a = r"\u1234"  # odd for unicode string
 b = r"\\u1234"  # seven-character string
 
+# byte literal
+
 c = b"Jalape\xc3\xb1o"  # multiple byte sequence represent single character
 d = "Jalape\xc3\xb1o"  # a string of single bytes
+e = "Jalapeño"
 print(c.decode())
 print(d)
+print(e.encode())
 print(c == d)
 
 
