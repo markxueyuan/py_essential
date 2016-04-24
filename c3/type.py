@@ -62,7 +62,7 @@ print(id(type(a)))  # type (class) also has its position in memory
 
 # All type objects are assigned names that can be used to perform type checking
 
-print(id(list)) # list is the name of type object
+print(id(list))  # list is the name of type object
 
 if type(b) is list:
     b.append(777)

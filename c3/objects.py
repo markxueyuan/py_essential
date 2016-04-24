@@ -1,4 +1,7 @@
+import dis
 from random import randint
+import math
+import random
 
 ################### none type
 
@@ -214,6 +217,147 @@ print(s)
 w = [i for i in range(16, 22)]
 s.update(w)  # add items w to s
 print(s)
+
+
+##################### type of class
+
+
+class Foo(object):
+    """ The documentation of a class"""
+    def __init__(self, arg):
+        self.foo = arg
+    c = 3.1415926
+
+
+print(type(Foo))  # class is itself an object whose type is type
+
+# type object's attribute
+
+print(Foo.__doc__)
+print(Foo.__name__)
+print(Foo.__bases__)  # tuple of base classes
+print(Foo.__dict__)  # class method and variables
+print(Foo.__module__)
+
+# type of instance
+f = Foo('h')
+print(type(f))  # the type of an instance is the class that defined it
+
+# attribute of instance
+print(f.__class__)
+print(f.__dict__)
+
+################ modules
+
+# The __module type__ is a container that holds objects loaded with the import statement
+# Modules defines a namespace that's implemented using a dictionary
+# accessible in the attribute __dict__
+
+print(math.__dict__)
+
+# whenever an attribute of a module is referenced,
+# it's translated into a dictionary lookup:
+a = math.ceil
+b = math.__dict__['ceil']
+print(a is b)
+
+print(math.__doc__)
+print(math.__name__)
+print(random.__file__)  # the file from which the module was loaded
+# print(m.__path__) # only defined when the module refer to a package
+
+
+############### bytecode
+
+# __bytecode__ represents raw byte-compiled executable code
+
+# refer to: https://www.reddit.com/r/Python/comments/1rfrfd/what_is_bytecode/
+# video lecture: https://www.youtube.com/watch?v=0IzXcjHs-P8
+
+def gunk(a=1, *args, b=3):
+    print(args)
+    c = None   # local vars
+    d = 1      # cell vars
+
+    def hehe():
+        nonlocal d
+        print(d)
+    return (a + b, c)
+
+print(dis.dis(gunk))  # dissemble gunk to bytecode
+c = gunk.__code__
+print(c)
+print(type(c))  # class 'code'
+print(dir(c))  # all the attributes of code object
+print(c.co_name)  # name
+print(c.co_code)  # string representing raw byte code
+print([x for x in c.co_code])  # integer representation of the byte code
+print(c.co_argcount)  # number of positional argument
+print(c.co_nlocals)  # number of local variables of the function
+print(c.co_varnames)  # names of local variables
+print(c.co_cellvars)  # variables referenced by nested functions
+print(c.co_freevars)  # free variables used by nested functions
+print(c.co_consts)  # the literals used by the bytecode
+print(c.co_names)  # names used by the bytecode
+print(c.co_filename)  # name of the file in which the code was compiled
+print(c.co_firstlineno)  # first line number of the function
+print(c.co_lnotab)  # String encoding bytecode offsets to line numbers
+print(c.co_stacksize)  # required stack size
+print(c.co_flags)  # flags to interpreters.
+
+################# frame object
+
+
+################# traceback object
+
+################# generator objects
+
+def myrange(n):
+    i = 0
+    while i < n:
+        yield i
+        i += 1
+
+for i in myrange(5):
+    print(i, end="")
+
+print()
+
+m = myrange(5)
+print(m.__next__())
+
+################ slice object
+
+a = [i for i in range(10)]
+print(a[2:8:2])  # slices in extended slice syntax
+s = slice(2, 8, 2)  # build a slice object
+print(type(s))
+
+print(s.start)
+print(s.stop)
+print(s.step)
+print(s.indices(100))  # how slice would be applied to the sequence of that length
+print(s.indices(6))
+
+############### ellipsis object
+
+
+class Example(object):
+    def __getitem__(self, index):
+        return index
+e = Example()
+b = e[3, ..., 4]
+x, y, z = b
+print(type(y))
+
+
+
+
+
+
+
+
+
 
 
 

@@ -128,24 +128,27 @@ print(len.__self__)
 
 ############### callable class and instance
 
+
 class Aaa(object):
-    def __init__(self):
+    def __init__(self):  # make class callable
         self.aaa = []
 
     def add(self, arg):
         self.aaa.append(arg)
 
-    def __call__(self, index):
+    def __call__(self, index):  # make instance callable
         return self.aaa[index]
 
     def __str__(self):
         return str(self.aaa)
 
 
-a = Aaa()
+a = Aaa()  # Aaa is now a callable class
 for i in range(1, 6): a.add(i)
 print(a)
 print(a(2))  # a is now a callable instance
+
+
 
 
 
