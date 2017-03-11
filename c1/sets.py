@@ -5,18 +5,19 @@ s = set([3, 5, 9, 10])
 print(s)
 
 t = set("Hello")  # elements in set are unique
-print(t)
+print("t is: ", t)
 
-u = set(('a', 'b', 'c'))
-print(u)
+u = set(('a', 'b', 'c', 'l'))
+print("u is: ", u)
 
 
 ##
 
-a = t | s
-b = t & s
-c = t - s
-d = t ^ s
+a = t | u
+b = t & u
+c = t - u
+d = t ^ u # symmetric difference \
+# (items in t or s, but not both)
 print(a)
 print(b)
 print(c)

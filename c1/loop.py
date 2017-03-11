@@ -11,9 +11,15 @@ b = range(1, 8)
 c = range(0, 14, 3)
 d = range(8, 1, -1)
 
+
+v = [a, b, c, d]
+for i in v:
+    print(list(i))
+
 # for loop
 
 a = "Hello World"
+
 for c in a:
     print(c)
 
@@ -32,10 +38,17 @@ prices = {
 for p in prices:
     print(p, prices[p])
 
-f = open("demo.txt")
+f = open("c1/demo.txt")
 
 for l in f:
     print(l, end="")  # delete the \n at the end of the line
+
+# compare to:
+
+f = open("c1/demo.txt")
+
+for l in f:
+    print(l)  # delete the \n at the end of the line
 
 
 

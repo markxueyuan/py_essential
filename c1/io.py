@@ -1,18 +1,19 @@
 # What is 'method'?
 # why is it necessary to close a file after open it?
 
-
 # write
+
+from __future__ import print_function
 
 numyears = 20
 rate = .05
 principal = 1000
 year = 0
 
-f = open("demo.txt", "w")  # the open function returns a new file object
+f = open("c1/demo.txt", "w")  # the open function returns a new file object
 
-# f.write("%s" % "The compounds with rate .05")  # invoke method `write' on this object
-# print(file=f)  # print a new line
+f.write("%s" % "The compounds with rate .05")  # invoke method `write' on this object
+print(file=f)  # print a new line
 print("Year, Principal", file=f)  # write header
 
 while year <= numyears:
@@ -24,12 +25,19 @@ f.close()
 
 # read
 
-g = open("demo.txt")
+g = open("c1/demo.txt")
 line = g.readline()
 
 while line:
     print(line, end='')  # print line in python3
     line = g.readline()  # read the next line
 g.close()
+
+# for statement for reading lines
+
+for line in open("c1/demo.txt"):
+    print(line)
+
+
 
 

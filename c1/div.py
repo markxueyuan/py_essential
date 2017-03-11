@@ -5,3 +5,5 @@ def divide(a, b):
 
 def te():
     print("say teeee")
+
+print(divide(5,3))

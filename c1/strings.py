@@ -19,11 +19,13 @@ d = a[6]  # strings are sequences of characters indexed by integers
 print(d)
 
 # substring
-
-a1 = a[:5]
-a2 = a[6:]
-a3 = a[3:9]
-print(a1, a2, a3, "\n")
+u = "0123456789"
+u1 = u[:6] # not include the 6th
+u2 = u[6:] # include the 6th
+u3 = u[3:9]
+print(u1)
+print(u1, u2, u3)
+print(u1, u2, u3, "\n")
 
 # concatenate
 

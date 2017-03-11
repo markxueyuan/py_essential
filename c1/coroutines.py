@@ -66,7 +66,7 @@ matcher.close()  # close the 'waiter'
 
 # simulate a log
 
-a = "demo3.txt",
+a = "c1/demo3.txt",
 
 _thread.start_new_thread(simulate_log, a)
 
@@ -81,7 +81,7 @@ matchers = [
 for m in matchers:
     m.__next__()
 
-log = tail(open("demo3.txt"))
+log = tail(open("c1/demo3.txt"))
 
 for l in log:
     for m in matchers:

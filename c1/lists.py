@@ -16,8 +16,12 @@ print(names)
 
 b = names[0:2]
 c = names[2:]
-names[1] = 'Jeff'  # replace the second
-names[0:2] = ["Dave", "Mark", "Jeff"]  # replace the first two item with the list
+print("b is ", b)
+print("c is ", c)
+names[3] = 'Jeff'  # replace the second
+names[0:2] = ["Dave", "Mark", "Jeff"]  # rep
+a = [1, "Dave", 3.14, ["Mark", 7, 9, [100, 101]], 10]
+print(a[3][3][1])  # applying indexing operation multiple timeslace the first two item with the list
 print(names)
 
 # concatenate
@@ -28,7 +32,7 @@ print(a)
 # empty lists
 
 ep = []
-ep = list()
+ep2 = list()
 
 # nested list
 

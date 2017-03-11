@@ -28,6 +28,7 @@ def connect(host, port, timeout=300):
     print(timeout)
 
 connect('www.python.org', 3030, 200)
+connect('www.python.org', 3030)
 
 connect(port=3030, host="www.python.org")  # arbitrary order
 

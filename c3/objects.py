@@ -1,3 +1,4 @@
+from __future__ import print_function
 import dis
 from random import randint
 import math
@@ -22,7 +23,7 @@ print(id(True), id(False))  # position
 # int
 # in python 3, long are integrated into int
 
-# float in python is double-precision (64 bit) IEEE 754
+# float in python is of double-precision (64 bit) IEEE 754
 a = 3.1415926
 print(a.as_integer_ratio())  # turns float into ratio of integers
 print(a.hex())  # return the hexadecimal representation of an integer
@@ -107,6 +108,7 @@ print(s.rfind("il"))  # find the position where substring last appears
 
 uu = "IsThatReal2016"
 print(uu.isalnum(), (uu + "?").isalnum(), uu.isalpha())
+# isalnum find if uu consists of alphabetnumeric characters
 
 digit = "1234567890"
 print(digit.isdigit())

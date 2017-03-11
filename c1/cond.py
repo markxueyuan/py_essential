@@ -1,5 +1,4 @@
-##
-from Lib import random
+import random
 
 a = random.randint(0, 100)
 b = random.randint(0, 100)
@@ -22,6 +21,8 @@ age = random.randint(0, 15)
 if product == "game" and type == "private memory" \
     and not (age < 4 or age > 8):
     print("I will take it!")
+else:
+    print("I will not!")
 
 ##
 
@@ -38,6 +39,7 @@ else:
 print(content)
 
 ##
+
 x = ['spam']; y = ['']
 s = random.choice([x, y])
 if 'spam' in s:
@@ -50,7 +52,10 @@ print(has_spam)
 has_spam = 'spam' in s
 print("or: ", has_spam)
 
-# The in operator is commonly used to check whether
+# The in operator is commonly used to check if
 # a value is contained inside of another object
+
+
+# random.choice is quite convenient to use
 
 

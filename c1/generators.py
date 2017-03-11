@@ -3,12 +3,13 @@
 
 # Can you give the stack trace of the code?
 
+from __future__ import print_function
 
 def countdown(n):
     print("Counting Down!")
     while n > 0:
-        yield n
-        # print("Still ", n)  # adding this print provider insight on how generator works
+        yield n # function that uses yield is known as a generator
+        # print("Still ", n)  # uncommenting this `print' provides insight on how generator works
         n -= 1  # means n = n - 1
 
 
@@ -25,7 +26,9 @@ for i in range(10):
     n <--- 1000
 but the body of the function is not called.
 
-2. when c.next() is executed for the first time,
+2. when c.next() is exec
+for i in countdown(5):
+    print(i, end="")uted for the first time,
 the code of the body is executed to the `yield' line
     because n <--- 1000 in the local scope, so 1000 is returned.
 the code returns and suspends at the `yield' line
@@ -52,6 +55,11 @@ the execution suspends at the line of `yield n'
 
 for i in countdown(5):
     print(i, end="")
+
+# compare
+
+for i in countdown(5):
+    print(i,)
 
 # Unix tail
 # refer to tail.py

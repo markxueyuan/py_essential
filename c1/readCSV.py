@@ -1,7 +1,7 @@
 # Why do I set up list first then turn it into tuple?
 
 
-# copy csv file in to list-tuple-combined data structure
+# copy csv file into list-tuple-combined data structure
 # run 'python readCSV.py demo.txt' in console to see how the code works
 
 import sys

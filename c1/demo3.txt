@@ -57,3 +57,6 @@ I am little jython
 I am python, guido and jython
 You can see me at last line.
 You can see me at last line.
+I can show you the python magic.
+
+python

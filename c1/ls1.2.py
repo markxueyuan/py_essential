@@ -17,7 +17,9 @@ f.close()
 
 if len(sys.argv) != 2:  # sys.argv returns a list ["ls1.2.py", "demo2.txt"]
     print("Please supply a filename")
-    raise SystemExit(1)
+    raise SystemExit(1)# to run this file, run 'python ls1.2.py demo2.txt' in the console
+
+
 
 f = open(sys.argv[1])
 lines = f.readlines()  # read all input lines into a list of strings

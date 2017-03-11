@@ -7,7 +7,8 @@ items.append(73)  # edit the object
 
 print(dir(items))  # dir lists all methods available on the object
 
-print(items.__repr__())  # double underscore method
+# double underscore method
+print(items.__repr__())
 print(items.__str__())
 print(items.__add__([99, 66]))
 

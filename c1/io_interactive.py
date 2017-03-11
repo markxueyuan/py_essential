@@ -1,9 +1,12 @@
 from sys import stdin, stdout
 
-# The noted code doesn't work as I expected
-# stdout.write("Enter your name :")
-# name = stdin.readline()
-# print("You just typed: ", name)
+# The anormaly unexplained
+#stdout.write("Enter your name :")
+#name = stdin.readline()
+#print("")
+#print("You just typed: ", name)
 
+# alternatively
 name = input("Enter your name: ")
 stdout.write("You just typed: %s" % name)
+print("")

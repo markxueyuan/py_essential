@@ -37,6 +37,7 @@ e = (item) # the parentheses is redundant
 print(a)
 print(b)
 print(c)
+print(e)
 print(e == item)
 print(c == item)
 

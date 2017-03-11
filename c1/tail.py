@@ -21,8 +21,14 @@ def grep(lines, searchtext):
         if searchtext in l:
             yield l
 
+t = tail(open("demo3.txt"))
 
-""" t = tail(open("demo3.txt", "r"))
+pylines = grep(t, "python")
+
+for line in pylines:
+    print(line, end="")
+
+""" t = tail(open("c1/demo3.txt"))
 
 pylines = grep(t, "python")
 
@@ -39,6 +45,7 @@ edit the txt file.
 # grep is a useful command in Unix
 
 
+"""
 def grep2(filename, searchtext):
     print("Starts!")
     f = open(filename)
@@ -47,9 +54,10 @@ def grep2(filename, searchtext):
             yield l
         time.sleep(1.5)
 
-c = grep2("demo3.txt", "python")
+c = grep2("c1/demo3.txt", "python")
 
 for i in range(3):
     print(c.__next__(), end="")
+"""
 
 
