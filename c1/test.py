@@ -1,4 +1,4 @@
-# This script for temporary use
+# This script is for temporary use
 
 print("python" in "jfaslfsal python jaslfajslf")
 

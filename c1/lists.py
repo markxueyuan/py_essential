@@ -19,10 +19,10 @@ c = names[2:]
 print("b is ", b)
 print("c is ", c)
 names[3] = 'Jeff'  # replace the second
-names[0:2] = ["Dave", "Mark", "Jeff"]  # rep
-a = [1, "Dave", 3.14, ["Mark", 7, 9, [100, 101]], 10]
-print(a[3][3][1])  # applying indexing operation multiple timeslace the first two item with the list
+names[0:2] = ["Dave", "Mark", "Jeff"]  # replace the first two item with the list
 print(names)
+a = [1, "Dave", 3.14, ["Mark", 7, 9, [100, 101]], 10]
+print(a[3][3][1])  # applying indexing operation multiple times
 
 # concatenate
 

@@ -1,6 +1,6 @@
 # What does _first class_ mean?
 # 1. All objects named by an identifier have equal status
-# 2. All objects can be named can be treated as data
+# 2. All objects that can be named can be treated as data
 
 import math
 

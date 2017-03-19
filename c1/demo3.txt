@@ -60,3 +60,14 @@ You can see me at last line.
 I can show you the python magic.
 
 python
+I am little python
+I am little nothing
+I am little guido
+I am little jython
+I am python, guido and jython
+I am little python
+I am little nothing
+I am little guido
+I am little jython
+I am python, guido and jython
+You can see me at last line.

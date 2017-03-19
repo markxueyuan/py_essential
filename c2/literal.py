@@ -15,7 +15,7 @@ b = r"\\u1234"  # seven-character string
 
 # byte literal
 
-c = b"Jalape\xc3\xb1o"  # multiple byte sequence represent single character
+c = b"Jalape\xc3\xb1o"  # multiple byte sequence represents a single character
 d = "Jalape\xc3\xb1o"  # a string of single bytes
 e = "Jalapeño"
 print(c.decode())

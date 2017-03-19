@@ -36,7 +36,7 @@ print(foo.__code__)  # byte compiled codes
 print(foo.__defaults__)  # tuple containing default arguments
 print(foo.__globals__)  # global variables
 
-print(bar(3, 4)(5))  # returns (3 + 5) * 4
+print(bar(3, 4)(5))  # returns the result of (3 + 5) * 4
 print(bar(3, 4).__closure__)  # show the closure created by calling bar()
 
 ##################### methods
@@ -92,7 +92,7 @@ print(f)
 # __bound method__ is a callable object that wraps both an function (method)
 # and an associated instance
 
-# loop up can also occur on the class itself
+# look up can also occur on the class itself
 
 oo = Foo.add  # unbound method
 oo(f, "yeah")  # give the method self and other arguments

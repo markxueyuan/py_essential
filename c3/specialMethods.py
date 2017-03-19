@@ -119,7 +119,7 @@ class Counter:
 # you must include the self argument; when call the method from outside,
 # python automatically adds the python reference for you.
 
-f = FileInfo("red_rose.mp3")
+f = FileInfo("c3/red_rose.mp3")
 print(f.__class__)
 print(f.__doc__)
 print(f)
@@ -129,7 +129,7 @@ print(f)
 
 mp3file = MP3FileInfo()
 print(mp3file)
-mp3file.parse("red_rose.mp3")
+mp3file.parse("c3/red_rose.mp3")
 # mp3file["item"] = "red_rose.mp3"
 print(mp3file)
 print(MP3FileInfo)

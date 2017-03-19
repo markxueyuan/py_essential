@@ -56,6 +56,6 @@ print("or: ", has_spam)
 # a value is contained inside of another object
 
 
-# random.choice is quite convenient to use
+# random.choice is pretty convenient to use
 
 

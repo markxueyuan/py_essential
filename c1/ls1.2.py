@@ -5,7 +5,7 @@ import sys
 
 # write
 
-f = open("demo2.txt", "w")
+f = open("c1/demo2.txt", "w")
 
 i = 0
 while i < 50:
