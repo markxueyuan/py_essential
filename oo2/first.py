@@ -33,8 +33,11 @@ p.reset()
 # which is equivalent to:
 
 Point.reset(p)
+# which means that this method can also be a method on the class
+# you must explicitly include the `self' in the code, which is p here.
 
-# you must include self in your methods
+
+# you must include self in your methods when declares a method in the class
 
 class Point:
     def reset():
@@ -82,14 +85,17 @@ point1.reset()
 point2.move(5,0)
 point1.move(3,4)
 point1.calculate_distance(point2)
+assert(point1.calculate_distance(point2) == point2.calculate_distance(point1))
 
 ## Initialization
 
 # __sth__ will be treated by interpreter as a special case
+# which has leading and trailing double underscores
 
 class Point:
     def __init__(self, x, y):
         self.move(x, y)
+
     def move(self, x, y):
         self.x = x
         self.y = y
@@ -128,7 +134,7 @@ class Point:
 
 point = Point()
 point.x
-# But you still can freely assign value to the object
+# But you still can freely assign attribute to the object
 point.z = 4
 
 ## Constructor
@@ -137,7 +143,7 @@ class Point:
         pass
 
 # __new__ construct an object, takes (at least) one argument, the class
-# Since it is called before the objectis constructed,
+# Since it is called before the object is constructed,
         # so there is no self argument
 
 ## docstring
