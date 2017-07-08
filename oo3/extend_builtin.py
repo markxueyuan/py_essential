@@ -1,30 +1,30 @@
 
 # inherit built-in class list, adding a new method to it.
-class ContractList(list):
+class ContactList(list):
     def search(self, name):
         """Return all contracts that contain the search value
         in their name."""
-        matching_contracts = []
-        for contract in self:
-            if name in contract.name:
-                matching_contracts.append(contract)
-        return matching_contracts
+        matching_contacts = []
+        for contact in self:
+            if name in contact.name:
+                matching_contacts.append(contact)
+        return matching_contacts
 
 
-class Contract():
-    all_contracts = ContractList()
+class Contact():
+    all_contacts = ContactList()
 
     def __init__(self, name, email):
         self.name = name
         self.email = email
-        Contract.all_contracts.append(self)
+        Contact.all_contacts.append(self)
 
 
 def main():
-    c1 = Contract("John A", "johna@example.net")
-    c2 = Contract("John B", "johnb@example.net")
-    c3 = Contract("Jenna C", "jennac@example.net")
-    [c.name for c in Contract.all_contracts.search('John')]
+    c1 = Contact("John A", "johna@example.net")
+    c2 = Contact("John B", "johnb@example.net")
+    c3 = Contact("Jenna C", "jennac@example.net")
+    print([c.name for c in Contact.all_contacts.search('John')])
 
 
 if __name__ == "__main__":
