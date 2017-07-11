@@ -136,3 +136,100 @@ if __name__ == "__main__":
 # the improvement comes from the realization of calling
 # the next method in the class hierarchy, instead of
 # the parent method.
+
+
+################ superclass with the same name
+################ but with different arguments
+
+#### e.g. Using super in the Friend class
+
+### To solve this, we have to plan it from the beginning
+
+# The cumbersome syntax:
+
+class Contact2:
+    all_contacts = []
+
+    def __init__(self, name='', email='', **kwargs):
+        super().__init__(**kwargs) # why need a super() here?
+        self.name = name
+        self.email = email
+        self.all_contacts.append(self)
+
+
+class AddressHolder2:
+    def __init__(self, street='', city='', state='', code='',
+                 **kwargs):
+        super().__init__(**kwargs)
+        self.street = street
+        self.city = city
+        self.state = state
+        self.code = code
+
+
+class Friend2(Contact2, AddressHolder2):
+    def __init__(self, phone='', **kwargs):
+        super().__init__(**kwargs)
+        self.phone = phone
+
+
+# What we did?
+# 1. Use keyword arguments to let empty string as the default value
+# 2. Using **kwargs to capture all arguments the methods don't know
+# 3. Passes these parameter up to the next class with the super call
+
+
+
+# About **kwargs
+
+#1. it collects any keyword arguments that are not explicitly
+# listed in the parameter list
+
+#2. these arguments are stored in a dictionary named kwargs
+
+#3. we can call it any name, but conventionally use **kwargs
+# or **kw
+
+#4. When we call a different method with a **kwargs syntax,
+# it unpack the dictionary and pass the results to the method
+# as normal keyword argument
+
+## page 74 includes some subtleties you may want to read, like:
+
+# kwargs['phone'] = phone
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
