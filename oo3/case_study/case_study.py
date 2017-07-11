@@ -42,6 +42,7 @@ class ApartmentO(Property):
         print("APARTMENT DETAILS")
         print("laundry: %s" % self.laundry)
         print("has balcony: %s" % self.balcony)
+        print()
 
     def prompt_init():
         parent_init = Property.prompt_init()
@@ -80,15 +81,8 @@ def get_valid_input(input_string, valid_options):
     return response
 
 
-
-"""
 def main():
     get_valid_input("what laundry?", ("coin", "ensuite", "none"))
-
-
-if __name__ == "__main__":
-    main()
-"""
 
 
 # Let's simplify the code of Apartment using the newly defined function
@@ -158,7 +152,7 @@ class Purchase:
 
     def display(self):
         super().display()
-        print("RENTAL DETAILS")
+        print("PURCHASE DETAILS")
         print("selling price: {}".format(self.price))
         print("estimated taxes: {}".format(self.taxes))
 
@@ -230,5 +224,116 @@ def main2():
     house.display()
 
 
+
+
+
+# The order is important, the Rental.display()
+# is not called only we exchange the position of Rental and House
+# see page 91 for a thorough explanation
+
+
+class HouseRental2(House, Rental):
+    def prompt_init():
+        init = House.prompt_init()
+        init.update(Rental.prompt_init())
+        return init
+
+    prompt_init = staticmethod(prompt_init)
+
+def main3():
+    init = HouseRental2.prompt_init()
+    print(init)
+    house = HouseRental2(**init)
+    house.display()
+
+
+"""
+    
+Output:
+________________________________________
+
+PROPERTY DETAILS
+================
+square footage: 1
+bedrooms: 2
+bathrooms. 3
+
+HOUSE DETAILS
+# of stories: 4
+garage: none
+fenced yard: no    
+    
+"""
+
+class ApartmentRental(Rental, Apartment):
+    def prompt_init():
+        init = Apartment.prompt_init()
+        init.update(Rental.prompt_init())
+        return init
+    prompt_init = staticmethod(prompt_init)
+
+
+def main4():
+    init = ApartmentRental.prompt_init()
+    apt = ApartmentRental(**init)
+    apt.display()
+
+class HousePurchase(Purchase, House):
+    def prompt_init():
+        init = House.prompt_init()
+        init.update(Purchase.prompt_init())
+        return init
+    prompt_init = staticmethod(prompt_init)
+
+def main5():
+    init = HousePurchase.prompt_init()
+    hs = HousePurchase(**init)
+    hs.display()
+
+class ApartmentPurchase(Purchase, Apartment):
+    def prompt_init():
+        init = Apartment.prompt_init()
+        init.update(Purchase.prompt_init())
+        return init
+    prompt_init = staticmethod(prompt_init)
+
+def main6():
+    init = ApartmentPurchase.prompt_init()
+    ap = ApartmentPurchase(**init)
+    ap.display()
+
+class Agent:
+    def __init__(self):
+        self.property_list = []
+
+    def display_properties(self):
+        for property in self.property_list:
+            property.display()
+
+    type_map = {
+        ('house', 'rental'): HouseRental,
+        ('house', 'purchase'): HousePurchase,
+        ('apartment', 'rental'): ApartmentRental,
+        ('apartment', 'purchase'): ApartmentPurchase
+        # tuples can be keys of dictionary
+        # the values of the dictionary are class objects.
+    }
+
+    def add_property(self):
+        property_type = get_valid_input("What type of property?",
+                                       ('house', 'apartment')).lower()
+        payment_type = get_valid_input("What payment type?",
+                                       ("purchase", "rental")).lower()
+
+        PropertyClass = self.type_map[(property_type, payment_type)]
+        init = PropertyClass.prompt_init()
+        self.property_list.append(PropertyClass(**init))
+
+def main7():
+    ag = Agent()
+    ag.add_property()
+    ag.add_property()
+    print(ag.display_properties())
+
 if __name__ == "__main__":
-    main2()
+    main7()
