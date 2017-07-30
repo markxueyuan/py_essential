@@ -82,7 +82,7 @@ def main():
     d.insert(Character('r', underline=True))
     d.insert('l')
     d.insert('d')
-    print(d.string)d.insert('h')
+    print(d.string).insert('h')
     d.insert('e')
     d.insert(Character('l', bold=True))
     d.insert(Character('l', bold=True))
